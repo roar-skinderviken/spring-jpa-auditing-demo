@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: auditing-demo
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+
