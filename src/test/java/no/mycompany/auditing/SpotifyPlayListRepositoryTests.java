@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 import org.testcontainers.containers.MySQLContainer;
-import org.testcontainers.utility.DockerImageName;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -34,7 +33,7 @@ class SpotifyPlayListRepositoryTests {
         @Bean
         @ServiceConnection
         MySQLContainer<?> mysqlContainer() {
-            return new MySQLContainer<>(DockerImageName.parse("mysql:latest"));
+            return new MySQLContainer<>("mysql:8.1");
         }
     }
 
