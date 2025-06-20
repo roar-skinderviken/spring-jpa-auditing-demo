@@ -3,9 +3,9 @@ version = "0.0.1-SNAPSHOT"
 
 plugins {
 	java
-	id("org.springframework.boot") version "3.5.0"
-	id("io.spring.dependency-management") version "1.1.7"
-	id("io.freefair.lombok") version "8.13.1"
+	alias(libs.plugins.springframework.boot)
+	alias(libs.plugins.spring.dependency.management)
+	alias(libs.plugins.freefair.lombok)
 }
 
 java {
