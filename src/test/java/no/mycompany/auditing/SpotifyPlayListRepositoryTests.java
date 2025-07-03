@@ -9,7 +9,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 import org.testcontainers.containers.MySQLContainer;
@@ -30,7 +29,6 @@ class SpotifyPlayListRepositoryTests {
     @TestConfiguration
     static class MySQLTestContainerConfiguration {
 
-        @Bean
         @ServiceConnection
         MySQLContainer<?> mysqlContainer() {
             return new MySQLContainer<>("mysql:8.1");
