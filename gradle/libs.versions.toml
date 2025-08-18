@@ -1,5 +1,5 @@
 [versions]
-mockito-version = "5.18.0"
+mockito-version = "5.19.0"
 
 # plugins
 spring-boot-version = "3.5.4"
