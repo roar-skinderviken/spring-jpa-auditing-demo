@@ -4,7 +4,7 @@ mockito-version = "5.18.0"
 # plugins
 spring-boot-version = "3.5.4"
 spring-dependency-management-version = "1.1.7"
-freefair-lombok-version = "8.14"
+freefair-lombok-version = "8.14.2"
 
 [libraries]
 mockito = { module = "org.mockito:mockito-core", version.ref = "mockito-version" }
