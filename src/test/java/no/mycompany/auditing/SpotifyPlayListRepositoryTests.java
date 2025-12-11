@@ -5,13 +5,13 @@ import no.mycompany.auditing.repository.SpotifyPlayList;
 import no.mycompany.auditing.repository.SpotifyPlayListRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
+import org.springframework.boot.jpa.test.autoconfigure.TestEntityManager;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
-import org.testcontainers.containers.MySQLContainer;
+import org.testcontainers.mysql.MySQLContainer;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -30,8 +30,8 @@ class SpotifyPlayListRepositoryTests {
     static class MySQLTestContainerConfiguration {
 
         @ServiceConnection
-        MySQLContainer<?> mysqlContainer() {
-            return new MySQLContainer<>("mysql:8.1");
+        MySQLContainer mysqlContainer() {
+            return new MySQLContainer("mysql:8.1");
         }
     }
 
@@ -61,6 +61,8 @@ class SpotifyPlayListRepositoryTests {
 
         // assert that updatedAt is updated
         var updatedPlayList = entityManager.find(SpotifyPlayList.class, existingPlayListInDb.getId());
+
+        assertNotNull(updatedPlayList);
         assertTrue(updatedPlayList.getUpdatedAt().isAfter(originalUpdateAt));
     }
 
