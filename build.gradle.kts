@@ -23,8 +23,10 @@ dependencies {
     runtimeOnly("com.h2database:h2") // fallback db when running the app
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.boot:spring-boot-flyway")
+    testImplementation("org.springframework.boot:spring-boot-data-jpa-test")
     testImplementation("org.springframework.boot:spring-boot-testcontainers")
-    testImplementation("org.testcontainers:mysql")
+    testImplementation("org.testcontainers:testcontainers-mysql")
     testRuntimeOnly("org.flywaydb:flyway-mysql")
     testRuntimeOnly("com.mysql:mysql-connector-j")
 }
